@@ -3,4 +3,8 @@ Rails.application.routes.draw do
 
   root "tweets#index"
 
+  namespace :admin do
+    root "tweets#index"
+  end
+
 end
