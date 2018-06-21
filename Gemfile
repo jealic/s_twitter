@@ -38,6 +38,7 @@ gem 'ffaker'
 gem 'kaminari'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
+gem 'materialize-sass', '~> 1.0.0.rc1'
 
 
 group :development, :test do
