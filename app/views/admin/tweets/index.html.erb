@@ -1,1 +1,28 @@
-<h1>Here is the back-end of tweets</h1>
+<h1>Administration Department</h1>
+
+<p><%= link_to 'Tweet List' %> | <%= link_to 'User List' %></p>
+
+<hr>
+
+<ul>
+  <% @tweets.each do |tweet| %>
+  <li>
+    <%= tweet.description %>
+    <%= link_to 'Show' %>
+    <%= link_to 'Delete' %>
+  </li>
+  <% end %>
+</ul>
+
+<hr>
+
+<%= form_for [:admin, @tweet] do |f| %>
+  <%= f.text_area :description, placeholder: "Hey, what's up?" %>
+  <%= f.submit %>
+<% end %>
+
+<% if @tweet.errors.any? %>
+  <%= @tweet.errors.full_messages.to_sentence %>
+<% end %>
+
+
