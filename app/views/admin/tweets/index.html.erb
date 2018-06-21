@@ -1,6 +1,7 @@
 <h1>Administration Department</h1>
 
-<p><%= link_to 'Tweet List' %> | <%= link_to 'User List' %></p>
+<p><%= link_to 'Tweet List', admin_tweets_path  %> | 
+  <%= link_to 'User List' %></p>
 
 <hr>
 
@@ -9,7 +10,7 @@
   <li>
     <%= tweet.description %>
     <%= link_to 'Show' %>
-    <%= link_to 'Delete' %>
+    <%= link_to 'Delete', admin_tweet_path(tweet), method: :delete, data: {confirm: "Are you sure?"} %>
   </li>
   <% end %>
 </ul>

@@ -19,6 +19,13 @@ class Admin::TweetsController < ApplicationController
     end
   end
 
+  def destroy
+    @tweet = Tweet.find(params[:id])
+    @tweet.destroy
+    flash[:alert] = "You've deleted a tweet!"
+    redirect_to admin_tweets_path
+  end
+
   private
 
   def tweet_params
