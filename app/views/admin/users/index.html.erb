@@ -1,0 +1,35 @@
+<div class="row">
+  <h1>Administration Department</h1>
+
+  <p><%= link_to 'Tweet List', admin_tweets_path  %> | 
+    <%= link_to 'User List', admin_users_path %></p>
+
+  <hr>
+  
+  <div class="col l12 x12 s12">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Users on Tweet</th>
+          <th>Introduction</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %> 
+        <tr>
+          <td scope="row"><%= user.id %></td>
+          <td>
+            <%= link_to admin_user_path(user) do %>
+            <%= user.name %>
+            <% end %>              
+          </td>
+          <td><%= user.introduction %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
