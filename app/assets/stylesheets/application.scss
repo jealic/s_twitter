@@ -16,3 +16,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "materialize";
+
+
+.one-tweet {
+  border: 1px solid red;
+  margin: 20px 10px;
+  padding: 20px 0 50px 0;
+}

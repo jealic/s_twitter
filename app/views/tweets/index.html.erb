@@ -1,1 +1,31 @@
-<h1>Tweet general users port</h1>
+<div class="row">
+  <div class="col x9 m8 s12">
+
+    <!--create tweet -->
+    <div class="div">
+      <%= form_for @tweet do |f| %>
+        <%= f.text_area :description, placeholder: "Hey, what's up?" %>
+        <%= f.submit %>
+      <% end %>
+
+      <% if @tweet.errors.any? %>
+        <%= @tweet.errors.full_messages.to_sentence %>
+      <% end %> 
+    </div>
+
+    <!-- the newest tweet stream -->
+    <% @tweets.each do |tweet| %>
+    <div class="one-tweet">
+      <div class="col s2" id="avatar">
+        
+      </div>
+      
+      <div class="col s10" id="tweet-content">
+        <%= tweet.description %>
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+  <div class="col x3 m4 s12"></div>
+</div>
