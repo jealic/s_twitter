@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180622150625) do
+ActiveRecord::Schema.define(version: 20180622151437) do
 
   create_table "tweets", force: :cascade do |t|
     t.integer "user_id"
     t.text "description"
-    t.integer "replies_count"
-    t.integer "likes_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "replies_count", default: 0
+    t.integer "likes_count", default: 0
   end
 
   create_table "users", force: :cascade do |t|
