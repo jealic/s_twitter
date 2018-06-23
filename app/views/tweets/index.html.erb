@@ -3,14 +3,14 @@
 
     <!--create tweet -->
     <div class="div">
-      <%= form_for @tweet do |f| %>
+      <%= form_for [@user, @tweet] do |f| %>
         <%= f.text_area :description, placeholder: "Hey, what's up?" %>
         <%= f.submit %>
       <% end %>
 
       <% if @tweet.errors.any? %>
         <%= @tweet.errors.full_messages.to_sentence %>
-      <% end %> 
+      <% end %>
     </div>
 
     <!-- the newest tweet stream -->
@@ -21,6 +21,7 @@
       </div>
       
       <div class="col s10" id="tweet-content">
+        
         <%= tweet.description %>
       </div>
     </div>

@@ -9,7 +9,7 @@ class Admin::TweetsController < ApplicationController
   end
   
   def create
-    @tweet = Tweet.new(tweet_params)
+    @tweet = current_user.tweets.new(tweet_params)
     if @tweet.save
       flash[:notice] = "You've updated with a tweet."
       redirect_to admin_tweets_path
@@ -29,7 +29,7 @@ class Admin::TweetsController < ApplicationController
   private
 
   def tweet_params
-    params.require(:tweet).permit(:description, :user_id)
+    params.require(:tweet).permit(:description)
   end
   
 end
