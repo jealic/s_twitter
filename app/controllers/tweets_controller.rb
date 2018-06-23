@@ -10,7 +10,7 @@ class TweetsController < ApplicationController
     @tweet = current_user.tweets.new(tweet_params)
     if @tweet.save
       flash[:notice] = "You've updated with a tweet."
-      redirect_to admin_tweets_path
+      redirect_to tweets_path
     else
       @tweets = Tweet.all
       render :index
